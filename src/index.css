@@ -1,30 +1,127 @@
-html,
-body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background: #fafafa;
-  font-family: 'Helvetica Neue', arial, sans-serif;
-  font-weight: 400;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+	--space-medium: 1rem;
+	--space-small: calc(var(--space-medium) / 2);
+	--color-white: #fff;
+	--color-black: #000;
+	--color-accent-1: #14213d;
+	--color-accent-2: #fca311;
+	--color-accent-3: #fca311;
+	--color-border: #e5e5e5;
+	--color-shadow: gainsboro;
 }
 
 * {
-  box-sizing: border-box;
+	color: var(--color-black);
+	font-family: "Trebuchet MS", sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
-#app {
-  height: 100%;
-  text-align: center;
-  background-color: #673ab8;
-  color: #fff;
-  font-size: 1.5em;
-  padding-top: 100px;
+main {
+	align-items: center;
+	box-sizing: border-box;
 }
 
-.link {
-  color: #fff;
+header {
+	background-color: var(--color-accent-1);
+	box-shadow: 0 5px 5px var(--color-shadow);
+	display: flex;
+}
+
+h1 {
+	color: var(--color-white);
+	flex-grow: 1;
+	letter-spacing: 0.25rem;
+	padding: var(--space-small);
+}
+
+aside {
+	padding: var(--space-small);
+}
+
+@media only screen and (min-width: 64em) {
+	form {
+		display: flex;
+	}
+}
+
+#speakers {
+	align-items: flex-start;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-medium);
+}
+
+fieldset {
+	border: none;
+	margin-top: var(--space-medium);
+	padding: var(--space-small);
+}
+
+article {
+	background-color: white;
+	border: solid 1px var(--color-border);
+	box-shadow: 0 2px 2px var(--color-shadow);
+	display: flex;
+	flex-direction: column;
+	width: 7rem;
+}
+
+input {
+	height: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	padding: var(--space-small) var(--space-medium);
+	position: relative;
+	text-align: center;
+	transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+input:checked ~ label {
+	opacity: 0.2;
+}
+
+input:checked ~ label::before {
+	background-color: var(--color-accent-3);
+	border-radius: 50%;
+	bottom: 2rem;
+	color: var(--color-white);
+	content: "🗨";
+	height: 1.5rem;
+	position: absolute;
+	right: 1.5rem;
+	width: 1.5rem;
+}
+
+input:focus-visible ~ label {
+	transform: scale(1.1, 1.1);
+}
+
+button {
+	background-color: var(--color-white);
+	border: solid 2px var(--color-black);
+	border-radius: 5px;
+	color: var(--color-accent-1);
+	cursor: pointer;
+	padding: var(--space-small) var(--space-medium);
+	transition: transform 0.05s linear, background-color 0.2s ease-out;
+}
+
+button:focus-visible {
+	transform: scale(1.1, 1.1);
+}
+
+button:active {
+	background-color: var(--color-accent-2);
+	transform: translateY(1px);
+}
+
+textarea {
+	border: solid 1px var(--color-border);
+	height: 10rem;
+	padding: var(--space-small);
+	width: 20rem;
 }
