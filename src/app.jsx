@@ -8,7 +8,7 @@ function Speakers(props) {
 	return (
 		<main>
 			<header>
-				<h1>🗨 Daily scrum board</h1>
+				<h1>🗨 Daily scrum</h1>
 				<aside>
 					<button type="reset" form="speakers-form">
 						Clear
@@ -17,14 +17,14 @@ function Speakers(props) {
 			</header>
 			<form id="speakers-form">
 				<fieldset id="speakers">
-					<legend>List</legend>
+					<legend title="Select to mark team member">Team</legend>
 					{props.speakers.map((speaker, index) => (
 						<SpeakerCard key={index} name={speaker} />
 					))}
 				</fieldset>
 				<fieldset id="notes">
-					<legend>Notes</legend>
-					<textarea></textarea>
+					<legend><label htmlFor="noteinput">Notes</label></legend>
+					<textarea id="noteinput"></textarea>
 				</fieldset>
 			</form>
 		</main>
@@ -45,7 +45,7 @@ function SpeakerCard(props) {
 
 function Avatar() {
 	return (
-		<svg version="1.1" x="0px" y="0px" viewBox="0 0 512 512">
+		<svg version="1.1" x="0px" y="0px" viewBox="0 0 512 512" fill="currentColor">
 			<g>
 				<path
 					d="M256,0C114.836,0,0,114.836,0,256c0,55.849,17.988,107.567,48.454,149.692c0.197,0.897,0.479,1.781,0.94,2.625

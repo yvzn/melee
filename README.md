@@ -6,6 +6,8 @@ A web application to organize daily scrums in a remote-first world.
 
 The app is [Preact](https://preactjs.com/) website packaged with [ViteJS](https://vitejs.dev/).
 
+See [demo website](https://melee.z28.web.core.windows.net/).
+
 ## Run locally
 
 ### Requirements
@@ -27,8 +29,6 @@ Then open http://localhost:3000/ in browser of choice.
 
 [MIT License](https://choosealicense.com/licenses/mit/)
 
-MIT License
-
 Copyright (c) 2022 Yvan Razafindramanana
 
 ### Third parties
@@ -38,3 +38,6 @@ This project uses open-source, third party software:
 - [ViteJS](https://github.com/vitejs/vite): MIT License, Copyright (c) 2019-present Evan You & Vite Contributors
 - [Preact](https://preactjs.com/): MIT License, Copyright (c) 2015-present Jason Miller
 
+This project uses graphics under Creative Commons licence:
+
+- Fav icon by [Oh Rian](https://thenounproject.com/ohrianid/): Creative Commons license  (CCBY)
