@@ -1,0 +1,49 @@
+variables:
+- group: "Azure"
+
+trigger:
+- main
+
+pool:
+  # Windows is required for AzureFileCopy
+  vmImage: windows-latest
+
+jobs:
+- job: CI
+  steps:
+  - task: Npm@1
+    displayName: 'npm install'
+    inputs:
+      command: 'ci'
+  - task: Npm@1
+    displayName: 'npm build'
+    inputs:
+      command: 'custom'
+      customCommand: 'run build'
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: 'dist'
+      publishLocation: 'pipeline'
+      artifact: 'app'
+
+- deployment: CD
+  dependsOn: CI
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+  environment: 'Azure'
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - task: DownloadPipelineArtifact@2
+          inputs:
+            buildType: 'current'
+            artifactName: 'app'
+            targetPath: 'dist'
+        - task: AzureFileCopy@4
+          displayName: 'upload files to Azure'
+          inputs:
+            SourcePath: 'dist/*'
+            azureSubscription: '$(azureSubscription)'
+            Destination: 'AzureBlob'
+            storage: '$(storageAccountName)'
+            ContainerName: '$web'
