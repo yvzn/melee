@@ -5,8 +5,7 @@ trigger:
 - main
 
 pool:
-  # Windows is required for AzureFileCopy
-  vmImage: windows-latest
+  vmImage: ubuntu-latest
 
 jobs:
 - job: CI
@@ -39,11 +38,12 @@ jobs:
             buildType: 'current'
             artifactName: 'app'
             targetPath: 'dist'
-        - task: AzureFileCopy@4
+        - task: AzureCLI@2
           displayName: 'upload files to Azure'
           inputs:
-            SourcePath: 'dist/*'
             azureSubscription: '$(azureSubscription)'
-            Destination: 'AzureBlob'
-            storage: '$(storageAccountName)'
-            ContainerName: '$web'
+            scriptType: 'pscore'
+            scriptLocation: 'inlineScript'
+            inlineScript: |
+              az storage blob delete-batch --account-key $(storageAccountKey) --account-name $(storageAccountName) --source `$web --delete-snapshots include
+              az storage blob upload-batch --account-key $(storageAccountKey) --account-name $(storageAccountName) --destination `$web --source dist
