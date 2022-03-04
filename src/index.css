@@ -68,7 +68,8 @@ article {
 }
 
 input {
-	margin-left: -10000px;
+	left: -10000px;
+	position: absolute;
 }
 
 article label {
