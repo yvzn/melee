@@ -1,4 +1,4 @@
-const speakerList = ["Yva", "Val", "Gui", "Tom", "Syl", "Aur", "Spo", "Cyr", "Nic"];
+const speakerList = ["Oma", "Ous", "Yva", "Val", "Gui", "Tom", "Syl", "Aur", "Spo", "Cyr", "Nic"];
 
 export function App() {
 	return <Speakers speakers={speakerList} />;
