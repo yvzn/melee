@@ -69,6 +69,11 @@ article {
 	width: 7rem;
 }
 
+input[type='checkbox'] {
+	left: -10000px;
+	position: absolute;
+}
+
 article label {
 	cursor: pointer;
 	padding: var(--space-small) var(--space-medium);

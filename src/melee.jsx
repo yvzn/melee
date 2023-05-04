@@ -23,7 +23,7 @@ export function Melee(props) {
 function SpeakerCard(props) {
 	return (
 		<article>
-			<input type="checkbox" id={props.name} hidden />
+			<input type="checkbox" id={props.name} />
 			<label htmlFor={props.name}>
 				<Avatar />
 				{props.name}
