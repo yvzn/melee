@@ -1,6 +1,7 @@
 :root {
 	--space-medium: 1rem;
 	--space-small: calc(var(--space-medium) / 2);
+	--space-large: calc(var(--space-medium) * 2);
 	--color-white: #fff;
 	--color-black: #000;
 	--color-accent-1: #14213d;
@@ -40,12 +41,13 @@ aside {
 }
 
 @media only screen and (width >= 64em) {
-	form {
-		display: flex;
+	#melee-form {
+		display: grid;
+		grid-template-columns: 1fr auto;
 	}
 }
 
-#speakers {
+#melee-speakers {
 	align-items: flex-start;
 	display: flex;
 	flex-wrap: wrap;
@@ -65,11 +67,6 @@ article {
 	display: flex;
 	flex-direction: column;
 	width: 7rem;
-}
-
-input {
-	left: -10000px;
-	position: absolute;
 }
 
 article label {
@@ -119,6 +116,10 @@ button {
 	transition: transform 0.05s linear, background-color 0.2s ease-out;
 }
 
+button + button {
+	margin-left: var(--space-small);
+}
+
 button:focus-visible {
 	transform: scale(1.1, 1.1);
 }
@@ -133,4 +134,19 @@ textarea {
 	height: 10rem;
 	padding: var(--space-small);
 	width: 20rem;
+}
+
+ol li {
+	list-style-type: decimal;
+	margin-left: var(--space-large);
+}
+
+input[type="text"] {
+	border: none;
+	border-bottom: solid thin var(--color-black);
+	padding: var(--space-small) var(--space-medium);
+}
+
+input[type="text"]:focus-within {
+	border: solid 1px var(--color-black);
 }

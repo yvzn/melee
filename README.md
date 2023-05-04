@@ -4,7 +4,7 @@ A web application to organize daily scrums in a remote-first world.
 
 ## How?
 
-The app is [Preact](https://preactjs.com/) website packaged with [ViteJS](https://vitejs.dev/).
+The app is a [Preact](https://preactjs.com/) website packaged with [ViteJS](https://vitejs.dev/).
 
 See [demo website](https://melee.azureedge.net/).
 
@@ -12,7 +12,7 @@ See [demo website](https://melee.azureedge.net/).
 
 ### Requirements
 
-- [NodeJS 12](https://nodejs.org/en/download/) or higher
+- [NodeJS 16](https://nodejs.org/en/download/) or higher
 
 ### Start
 
@@ -21,7 +21,7 @@ npm install
 npm run dev
 ```
 
-Then open http://localhost:3000/ in browser of choice.
+Then open http://127.0.0.1:5173/ in browser of choice.
 
 <kbd>Ctrl + C</kbd> to exit
 
@@ -29,7 +29,7 @@ Then open http://localhost:3000/ in browser of choice.
 
 [MIT License](https://choosealicense.com/licenses/mit/)
 
-Copyright (c) 2022 Yvan Razafindramanana
+Copyright (c) 2022-2023 Yvan Razafindramanana
 
 ### Third parties
 
