@@ -1,4 +1,10 @@
+import { useEffect, useRef } from "preact/hooks";
+
 export function Melee(props) {
+	const noteInputRef = useRef(null);
+
+	useEffect(() => noteInputRef.current.focus(), []);
+
 	return (
 		<form id="melee-form">
 			<fieldset id="melee-speakers">
@@ -11,7 +17,7 @@ export function Melee(props) {
 				<legend>
 					<label htmlFor="noteinput">Notes</label>
 				</legend>
-				<textarea id="noteinput"></textarea>
+				<textarea id="noteinput" ref={noteInputRef}></textarea>
 			</fieldset>
 			<fieldset>
 				<button type="reset">Reset</button>

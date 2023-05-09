@@ -1,5 +1,5 @@
 import { Fragment } from "preact";
-import { useRef, useState } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
 
 export function Editor(props) {
 	const cloneOfSpeakerList = props.speakers.map(({ id, name }) => ({
@@ -45,7 +45,7 @@ export function Editor(props) {
 		<Fragment>
 			<form>
 				<fieldset id="editor-speakers">
-					<legend>Team</legend>
+					<legend>Team members:</legend>
 					<ol>
 						{speakerList.map((speaker) => (
 							<li>
@@ -115,6 +115,8 @@ function SpeakerEditor(props) {
 function NewSpeaker(props) {
 	const [value, setValue] = useState("");
 	const inputRef = useRef(null);
+
+	useEffect(() => inputRef.current.focus(), []);
 
 	const onInput = (e) => {
 		setValue(e.target.value);
