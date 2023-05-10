@@ -41,9 +41,22 @@ export function Editor(props) {
 		props.onChange(speakerList);
 	};
 
+	const pasteSpeakers = (event) => {
+		let paste = event.clipboardData.getData("text");
+		const split = paste.split(/[\r\n]+/).map((s) => s.trim());
+		if (split.length > 1) {
+			event.preventDefault();
+			setSpeakerList(
+				split
+					.filter((name) => Boolean(name))
+					.map((name) => ({ id: Math.random(), name }))
+			);
+		}
+	};
+
 	return (
 		<Fragment>
-			<form>
+			<form onPaste={pasteSpeakers}>
 				<fieldset id="editor-speakers">
 					<legend>Team members:</legend>
 					<ol>
