@@ -6,7 +6,7 @@ A web application to organize daily scrums in a remote-first world.
 
 The app is a [Preact](https://preactjs.com/) website packaged with [ViteJS](https://vitejs.dev/).
 
-See [demo website](https://melee.azureedge.net/).
+See [demo website](https://yvzn.github.io/melee/).
 
 ## Run locally
 
