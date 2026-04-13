@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Daily scrum site URL has changed" />
+	<title>Daily scrum has moved</title>
+	<style>
+		:root {
+			--space-medium: 1rem;
+			--space-small: calc(var(--space-medium) / 2);
+			--space-large: calc(var(--space-medium) * 2);
+			--color-white: #fff;
+			--color-black: #000;
+			--color-accent-1: #14213d;
+			--color-accent-2: #fca311;
+			--color-border: #e5e5e5;
+			--color-shadow: gainsboro;
+		}
+
+		* {
+			box-sizing: border-box;
+			font-family: "Trebuchet MS", sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background: linear-gradient(180deg, #f8f9fc 0%, #eef2f7 100%);
+			color: var(--color-black);
+			min-height: 100vh;
+		}
+
+		header {
+			background-color: var(--color-accent-1);
+			box-shadow: 0 5px 5px var(--color-shadow);
+			padding: var(--space-small);
+		}
+
+		h1 {
+			color: var(--color-white);
+			letter-spacing: 0.25rem;
+		}
+
+		main {
+			display: grid;
+			padding: var(--space-large);
+			place-items: center;
+		}
+
+		section {
+			background-color: var(--color-white);
+			border: 1px solid var(--color-border);
+			box-shadow: 0 2px 8px var(--color-shadow);
+			max-width: 42rem;
+			padding: var(--space-large);
+			width: 100%;
+		}
+
+		h2 {
+			color: var(--color-accent-1);
+			font-size: 1.5rem;
+			margin-bottom: var(--space-medium);
+		}
+
+		p {
+			line-height: 1.6;
+			margin-bottom: var(--space-medium);
+		}
+
+		a {
+			background-color: var(--color-white);
+			border: solid 2px var(--color-black);
+			border-radius: 5px;
+			color: var(--color-accent-1);
+			display: inline-block;
+			font-weight: bold;
+			padding: var(--space-small) var(--space-medium);
+			text-decoration: none;
+			transition: background-color 0.2s ease-out, transform 0.05s linear;
+		}
+
+		a:hover,
+		a:focus-visible {
+			background-color: var(--color-accent-2);
+		}
+
+		a:active {
+			transform: translateY(1px);
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>🗨 Daily scrum</h1>
+	</header>
+	<main>
+		<section aria-labelledby="notice-title">
+			<h2 id="notice-title">We moved to a new address</h2>
+			<p>
+				The Daily scrum service is now hosted at a different web address.
+				Please use the new address below to continue.
+			</p>
+			<p>
+				<a href="https://ludeo.net/melee">Continue to the new Daily scrum address</a>
+			</p>
+			<p>
+				New address:
+				<strong>https://ludeo.net/melee</strong>
+			</p>
+			<p>
+				Do not forget to update your bookmarks.
+			</p>
+		</section>
+	</main>
+</body>
+
+</html>
